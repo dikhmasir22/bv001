@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="PT Bina Asia Digitalindo" />
+    <meta property="og:description" content="Pelatihan Siap Kerja, Kursus, Bootcamp Online" />
+    <meta property="og:image" content="../static/image/logo.png" />
+    <title>Bina Asia Digitalindo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../static/css/pentium.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="shortcut icon" href="../static/image/logo.png" type="image/x-icon">
+    <style>
+        .swiper {
+            height: 150px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let lokasi = window.location.pathname;
+            document
+                .querySelectorAll(".navbar-nav .nav-link")
+                .forEach(function (link) {
+                    link.classList.remove("active");
+                });
+            if (lokasi.includes("/dashboard")) {
+                document
+                    .querySelector('.navbar-nav .nav-link[href="/"]')
+                    .classList.add("active");
+            } else if (lokasi.includes("/program")) {
+                document
+                    .querySelector('.navbar-nav .nav-link[href="/program"]')
+                    .classList.add("active");
+            } else if (lokasi.includes("/kontak")) {
+                document
+                    .querySelector('.navbar-nav .nav-link[href="/kontak"]')
+                    .classList.add("active");
+            } else {
+                document
+                    .querySelector('.navbar-nav .nav-link[href="/"]')
+                    .classList.add("active");
+            }
+
+
+            // Ambil tinggi maksimum dari semua card
+            var maxHeight = 0;
+            $('.semuakelas').each(function () {
+                var thisHeight = $(this).outerHeight();
+                if (thisHeight > maxHeight) {
+                    maxHeight = thisHeight;
+                }
+            });
+
+            // Setel tinggi semua semuakelas menjadi tinggi maksimum
+            $('.semuakelas').css('min-height', maxHeight + 'px');
+        });
+
+    </script>
+</head>
+
+<body style="background-color: white">
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg bg-light shadow">
+        <div class="container-fluid ps-xl-5 pe-4 align-items-center">
+            <a class="navbar-brand d-flex" href="/">
+                <img src="/static/image/bina-logo.png" width="125" alt="" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/"><i class="ri-home-4-fill"></i>
+                            Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/program"><i class="ri-database-fill"></i>Program</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/kontak"><i class="ri-phone-fill"></i> Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <!-- ==================================================================Header============================================================ -->
+    <br />
+    <!-- Contact Start -->
+    <div class="container-fluid py-5" style="background-color: whitesmoke;">
+        <div class="row justify-content-center">
+            <!-- Form Kontak -->
+            <div class="col-md-5">
+                <div class="text-center">
+                    <h3 class="fw-bold">Hubungi Kami</h3>
+                </div>
+                <form action="" method="post">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email_hubungi" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="pesan" class="form-label">Berikan pesan disini</label>
+                        <textarea class="form-control" id="pesan" rows="3" name="isi_hubungi"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-warning gelembung">Kirim</button>
+                </form>
+            </div>
+            <!-- Garis Vertikal -->
+            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                <div class="vr" style="height: 100%; width: 2px; background-color: #000;"></div>
+            </div>
+
+            <!-- Platform Lain -->
+            <div class="col-md-5">
+                <div class="text-center">
+                    <h3 class="fw-bold">Temukan Kami di Platform lain</h3>
+                    <!-- <p class="text-muted">Ikuti kami di media sosial dan dapatkan informasi terbaru:</p> -->
+                </div>
+                <div class="row mt-5">
+                    <!-- Instagram -->
+                    <div class="col-lg-4 text-center mt-4">
+                        <img src="../static/image/social-media/instagram.png" alt="Instagram" width="65" height="65">
+                        <p><a target="_blank" class="text-secondary fw-normal" style="text-decoration: none;"
+                                href="">Instagram »</a></p>
+                    </div>
+
+                    <!-- YouTube -->
+                    <div class="col-lg-4 text-center mt-4">
+                        <img src="../static/image/social-media/youtube.png" alt="YouTube" width="65" height="65">
+                        <p><a target="_blank" class="text-secondary fw-normal" style="text-decoration: none;"
+                                href="">YouTube »</a></p>
+                    </div>
+
+                    <!-- Facebook -->
+                    <div class="col-lg-4 text-center mt-4">
+                        <img src="../static/image/social-media/facebook.png" alt="Facebook" width="65" height="65">
+                        <p><a target="_blank" class="text-secondary fw-normal" style="text-decoration: none;"
+                                href="">Facebook »</a></p>
+                    </div>
+
+                    <!-- LinkedIn -->
+                    <div class="col-lg-4 text-center mt-4">
+                        <img src="../static/image/social-media/linkedin.png" alt="LinkedIn" width="65" height="65">
+                        <p><a target="_blank" class="text-secondary fw-normal" style="text-decoration: none;"
+                                href="">LinkedIn »</a></p>
+                    </div>
+
+                    <!-- Twitter -->
+                    <div class="col-lg-4 text-center mt-4">
+                        <img src="../static/image/social-media/twitter.png" alt="Twitter" width="65" height="65">
+                        <p><a target="_blank" class="text-secondary fw-normal" style="text-decoration: none;"
+                                href="">Twitter »</a></p>
+                    </div>
+
+                    <!-- Tiktok -->
+                    <div class="col-lg-4 text-center mt-4">
+                        <img src="../static/image/social-media/tiktok.png" alt="Tiktok" width="65" height="65">
+                        <p><a target="_blank" class="text-secondary fw-normal" style="text-decoration: none;"
+                                href="">Tiktok »</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <section id="hubungi" class="container-fluid mt-5">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <h4 class="mb-3">Ayo Kolaborasi bersama Bina Asia Digitalindo!</h4>
+                <div class="row col-7 col-md-4 col-lg-3 col-xl-2 justify-content-center text-center">
+                    <a target="_blank" href="https://wa.me/6285783905035?"
+                        class="d-flex justify-content-evenly align-items-center btn btn-primary border border-light border-1 ps-3 pe-3">
+                        <i class="ri-whatsapp-line text-light fs-3"></i>
+                        <span class="fw-bold" style="font-size: 14px">Gabung Sebagai Mitra</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact End -->
+
+
+    <!-- Section Footer -->
+    <section id="footer" class="container mt-3" style="padding-top: 35px;">
+        <div class="row">
+            <div class="col-12 mb-2 col-lg-2">
+                <a class="navbar-brand d-flex" href="#">
+                    <img src="../static/image/logo.png" width="50" alt="">
+                    <span class="text-primary">PT Bina Asia <br>Digitalindo</span>
+                </a>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2">
+                <h6 class="mb-3">Tentang Prakerja </h6>
+                <p class="fw-normal"><a style="text-decoration:none;" class="text-secondary" href="">Mitra
+                        Kolaborasi</a></p>
+                <p class="fw-normal"><a style="text-decoration:none;" class="text-secondary" href="">Panduan
+                        Prakerja</a></p>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2">
+                <h6 class="mb-3">Tentang Kami </h6>
+                <p class="fw-normal"><a style="text-decoration:none;" class="text-secondary" href="">Tentang Kami</a>
+                </p>
+                <p class="fw-normal"><a style="text-decoration:none;" class="text-secondary" href="">Dewan Kami</a></p>
+                <p class="fw-normal"><a style="text-decoration:none;" class="text-secondary" href="">Kontak Kami</a></p>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2">
+                <h6 class="mb-3">Lainnya</h6>
+                <p class="fw-normal"><a style="text-decoration:none;" class="text-secondary" href="">Blog</a></p>
+                <p class="fw-normal"><a style="text-decoration:none;" class="text-secondary" href="">Bantuan</a></p>
+                <p class="fw-normal"><a style="text-decoration:none;" class="text-secondary" href="">Syarat dan
+                        Ketentuan</a></p>
+            </div>
+            <div class="col-12 col-md-4 col-lg-2">
+                <h6 class="mb-3">Ikuti Kami</h6>
+                <p class="fw-normal">
+                    <a target="_blank" style="text-decoration:none;" class="text-secondary fs-4" href=""><i
+                            class="ri-youtube-line"></i></a>
+                    <a target="_blank" style="text-decoration:none;" class="text-secondary fs-4" href=""><i
+                            class="ri-instagram-line"></i></a>
+                    <a target="_blank" style="text-decoration:none;" class="text-secondary fs-4" href=""><i
+                            class="ri-facebook-line"></i></a>
+                    <a target="_blank" style="text-decoration:none;" class="text-secondary fs-4" href=""><i
+                            class="ri-twitter-line"></i></a>
+                    <a target="_blank" style="text-decoration:none;" class="text-secondary fs-4" href=""><i
+                            class="ri-linkedin-line"></i></a>
+                    <a target="_blank" style="text-decoration:none;" class="text-secondary fs-4" href=""><i
+                            class="ri-tiktok-line"></i></a>
+                </p>
+
+            </div>
+            <div class="col-12 col-md-4 col-lg-2">
+                <h6 class="mb-3">Keamanan</h6>
+                <p class="fw-normal"><a style="text-decoration:none; font-size:11px;" class="text-secondary fw-bold"
+                        href="">&copy; 2024 Bina Asia Digitalindo <br>All Rights Reserved</a></p>
+            </div>
+
+        </div>
+    </section>
+    <!-- Section Footer -->
+
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#007bff" fill-opacity="1"
+            d="M0,96L120,128C240,160,480,224,720,256C960,288,1200,288,1320,288L1440,288L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z">
+        </path>
+    </svg>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 300,
+            duration: 1400,
+        });
+    </script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="../static/js/pentium.js"></script>
+
+</body>
+
+</html>
